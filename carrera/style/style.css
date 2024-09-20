@@ -603,3 +603,9 @@ thead > tr{
     max-width: fit-content!important;
 }
 /* Guili si ves esto TKM *-* <3 */
+
+/* tiempocorredor.html */
+
+[page="tiempo"]{
+    background-image: url("../imagenes/tiempo.jpg") !important;
+}
