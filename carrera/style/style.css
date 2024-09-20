@@ -14,6 +14,8 @@ body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
+
 }
 
 .img__fondo {
@@ -72,9 +74,43 @@ body {
 }
 
 .contenedor__crono {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.cronoButton {
+    height: 40px;
+    width: 110px;
+    font-family: "darkmode-on", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border: 1px solid #3333335b;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.contenedor__tablaTiempo {
+    position: absolute;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    height: 400px;
+    /* Alto fijo de 600px */
+    width: 100%;
+    left: 0;
+    top: 150px;
+    transform: translate(20%, 0%);
+    overflow: auto;
+    margin-top: 50px;
 }
 
 article {
@@ -104,52 +140,43 @@ span {
     color: #fff;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table,
-th,
-td {
-    border: 1px solid black;
-}
-
-th,
-td {
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-.contenedor__tabla {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 1000px;
-    width: 100%;
-}
 
 .btn__volver {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
+    text-align: center;
     text-decoration: none;
-    top: 10%;
-    left: 5%;
-    padding: 8px 10px;
-    border: 1px solid;
+    top: 20%;
+    left: 1%;
+    padding: 4px 8px;
     border-radius: 8px;
-    background-color: #333;
-    color: #fff;
+    color: #000;
+    text-shadow: 0 0 10px #fff;
     font-weight: bold;
     transition: all 0.2s ease;
+    font-family: "sofachrome", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+    text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff,
+        -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+.btn__volver>img {
+    rotate: 90deg;
+    height: 200px;
+    object-fit: contain;
+    position: absolute;
+    width: 100px;
+    z-index: -1;
+    border-radius: 50%;
+    opacity: 0.8;
 }
 
 .btn__volver:hover {
-    scale: 1.1;
+    scale: 1.03;
 }
 
 .container {
@@ -163,12 +190,14 @@ th {
 
 main {
     display: flex;
+    width: 100%;
+    position: relative;
     flex-direction: column;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: start;
+    margin-bottom: 10px;
     font-size: 30px;
     color: #333;
     font-style: normal;
@@ -176,8 +205,9 @@ h1 {
     font-family: "sofachrome", sans-serif;
     font-weight: 500;
     font-style: italic;
-    margin-top: 30px;
+    margin-top: 70px;
 }
+
 
 h2 {
     text-align: start;
@@ -201,6 +231,19 @@ h3 {
     font-style: normal;
 }
 
+h4 {
+    text-align: start;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+    font-style: normal;
+    margin-left: 40px;
+    font-family: "sofachrome", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    margin-top: 70px;
+}
+
 .contenedor__btns {
     display: flex;
     flex-direction: column;
@@ -212,7 +255,7 @@ h3 {
     cursor: pointer;
     text-align: start;
     height: 20%;
-    width: 100%;
+    width: 70%;
     padding: 20px 10px;
     font-size: 20px;
     text-decoration: none;
@@ -224,7 +267,6 @@ h3 {
     background-color: #ffffff00;
     position: relative;
 }
-
 
 .button::before {
     content: " ";
@@ -253,39 +295,6 @@ h3 {
     margin-left: 30px;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-input,
-select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    box-sizing: border-box;
-    /* Asegura que padding y border no afecten al ancho total */
-}
-
-/* button {
-  width: 100%;
-  padding: 10px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #218838;
-} */
-
 #responseMessage {
     margin-top: 15px;
     font-weight: bold;
@@ -304,6 +313,7 @@ header {
     z-index: 1000;
     top: 0;
     position: fixed;
+    height: 60px;
 }
 
 .header-logo {
@@ -332,3 +342,264 @@ p {
     margin-bottom: 1.5em;
     color: #666;
 }
+
+
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Centrar los elementos a la izquierda */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.selects-container {
+    display: flex;
+    gap: 10px; 
+    justify-content: flex-start; 
+    margin-bottom: 20px; 
+    margin-top: 0px;
+}
+
+.selects-container select {
+    width: 250px; 
+    max-width: 100%; 
+    padding: 8px; 
+    margin-bottom: 15px; 
+    font-size: 16px;
+  }
+
+/* register.html */
+
+#runnerForm {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 90%;
+    padding: 10px;
+    gap: 30px;
+    margin-left: 30px;
+    margin-bottom: 150px;
+}
+
+#runnerForm>article {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.flex {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+}
+
+label {
+    position: absolute;
+    font-family: "sofachrome", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    bottom: 22%;
+    font-size: 11px;
+    margin-bottom: 5px;
+    margin-left: 30px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #3333335b;
+    background-color: transparent;
+    font-size: 16px;
+    box-sizing: border-box;
+    height: 65px;
+    margin-left: 20px;
+    font-family: "darkmode-on", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Ocultar las flechas y el control nativo en navegadores modernos */
+input[type="number"] {
+    -moz-appearance: textfield;
+    /* Firefox */
+    appearance: textfield;
+    /* Otros navegadores */
+}
+
+/* Opcional: Estilo para el borde del input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#submitBtn {
+    padding: 10px 8px;
+    font-size: 20px;
+    bottom: -20%;
+    position: absolute;
+    font-family: "sofachrome", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #00000000;
+}
+
+#submitBtn::before {
+    content: " ";
+    border-bottom: 4px #000000 solid;
+    position: absolute;
+    width: 0;
+    top: 40px;
+    left: 7px;
+    transition: all 0.3s ease;
+}
+
+#submitBtn:hover::before {
+    width: 85%;
+}
+
+#submitBtn:hover {
+    scale: 1.1;
+}
+
+/* listacorredores.html */
+
+[page="listacorredores"] {
+    background-image: url("../imagenes/lista.jpg") !important;
+}
+
+.contenedor__tabla {
+    background-color: transparent;
+    border-radius: 8px;
+    max-width: 1000px;
+    height: 500px;
+    width: 100%;
+    overflow: auto;
+    margin-left: 40px;
+    margin-bottom: 110px;
+    padding-top: 20px;
+}
+
+.contenedor__tabla::-webkit-scrollbar {
+    width: 11px;
+}
+
+.contenedor__tabla::-webkit-scrollbar-track {
+    background: #000;
+}
+
+.contenedor__tabla::-webkit-scrollbar-thumb {
+    background-color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid #000;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+tbody>:hover{
+    background-color: #000000;
+    color: #fff;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tbody > tr{
+    font-family: "darkmode-on", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 18px;
+    transition: 0.2s ease all;
+    background-color: #fff;
+
+}
+
+thead > tr{
+    font-family: "sofachrome", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+}
+
+/* ranking.html */
+
+[page="ranking"] {
+    background-image: url("../imagenes/ranking.jpg") !important;
+}
+
+.contenedor__filtros{
+    height: 50px;
+}
+
+.filtros__form{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 870px;
+    padding: 10px;
+    gap: 30px;
+    margin-left: 30px;
+    margin-bottom: 150px;
+}
+
+.btn__filtros{
+    padding: 10px 8px;
+    font-size: 20px;
+    right: -28%;
+    position: absolute;
+    font-family: "sofachrome", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #00000000;
+}
+.btn__filtros::before {
+    content: " ";
+    border-bottom: 4px #000000 solid;
+    position: absolute;
+    width: 0;
+    top: 40px;
+    left: 7px;
+    transition: all 0.3s ease;
+}
+
+.btn__filtros:hover::before {
+    width: 85%;
+}
+
+.btn__filtros:hover {
+    scale: 1.1;
+}
+[tabla="ranking"]{
+    max-width: fit-content!important;
+}
+/* Guili si ves esto TKM *-* <3 */
