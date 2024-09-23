@@ -73,73 +73,11 @@ body {
     bottom: 39%;
 }
 
-.contenedor__crono {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.cronoButton {
-    height: 40px;
-    width: 110px;
-    font-family: "darkmode-on", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    border: 1px solid #3333335b;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-.contenedor__tablaTiempo {
-    position: absolute;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 1000px;
-    height: 400px;
-    /* Alto fijo de 600px */
-    width: 100%;
-    left: 0;
-    top: 150px;
-    transform: translate(20%, 0%);
-    overflow: auto;
-    margin-top: 50px;
-}
-
 article {
     gap: 30px;
     display: flex;
     justify-content: center;
 }
-
-.contenedor__tiempo__numero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-#stopwatch {
-    border: 1px solid;
-    padding: 6px 10px;
-    border-radius: 8px;
-    background-color: #333;
-}
-
-#stopwatch,
-span {
-    font-size: 30px;
-    font-weight: bold;
-    color: #fff;
-}
-
 
 .btn__volver {
     display: flex;
@@ -348,26 +286,27 @@ p {
 .form-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Centrar los elementos a la izquierda */
+    align-items: flex-start;
+    /* Centrar los elementos a la izquierda */
     padding: 20px;
     margin-top: 20px;
 }
 
 .selects-container {
     display: flex;
-    gap: 10px; 
-    justify-content: flex-start; 
-    margin-bottom: 20px; 
+    gap: 10px;
+    justify-content: flex-start;
+    margin-bottom: 20px;
     margin-top: 0px;
 }
 
 .selects-container select {
-    width: 250px; 
-    max-width: 100%; 
-    padding: 8px; 
-    margin-bottom: 15px; 
+    width: 250px;
+    max-width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
     font-size: 16px;
-  }
+}
 
 /* register.html */
 
@@ -442,7 +381,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 #submitBtn {
     padding: 10px 8px;
-    font-size: 20px;
     bottom: -20%;
     position: absolute;
     font-family: "sofachrome", sans-serif;
@@ -520,7 +458,7 @@ td {
     text-align: left;
 }
 
-tbody>:hover{
+tbody>:hover {
     background-color: #000000;
     color: #fff;
 }
@@ -529,7 +467,7 @@ th {
     background-color: #f2f2f2;
 }
 
-tbody > tr{
+tbody>tr {
     font-family: "darkmode-on", sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -539,7 +477,7 @@ tbody > tr{
 
 }
 
-thead > tr{
+thead>tr {
     font-family: "sofachrome", sans-serif;
     font-weight: bold;
     font-style: italic;
@@ -552,11 +490,11 @@ thead > tr{
     background-image: url("../imagenes/ranking.jpg") !important;
 }
 
-.contenedor__filtros{
+.contenedor__filtros {
     height: 50px;
 }
 
-.filtros__form{
+.filtros__form {
     position: relative;
     display: flex;
     align-items: flex-start;
@@ -568,7 +506,7 @@ thead > tr{
     margin-bottom: 150px;
 }
 
-.btn__filtros{
+.btn__filtros {
     padding: 10px 8px;
     font-size: 20px;
     right: -28%;
@@ -582,6 +520,7 @@ thead > tr{
     transition: all 0.3s ease;
     border: 1px solid #00000000;
 }
+
 .btn__filtros::before {
     content: " ";
     border-bottom: 4px #000000 solid;
@@ -599,13 +538,72 @@ thead > tr{
 .btn__filtros:hover {
     scale: 1.1;
 }
-[tabla="ranking"]{
-    max-width: fit-content!important;
+
+[tabla="ranking"] {
+    max-width: fit-content !important;
 }
+
 /* Guili si ves esto TKM *-* <3 */
 
 /* tiempocorredor.html */
 
-[page="tiempo"]{
+[page="tiempo"] {
     background-image: url("../imagenes/tiempo.jpg") !important;
+}
+
+.contenedor__tiempo {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 30px;
+    gap: 10px;
+    align-items: start;
+    justify-content: center;
+}
+
+.contenedor__tiempo>article {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+#stopwatch {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 750px;
+    border: 1px solid;
+    padding: 10px 30px 10px 20px;
+    border-radius: 8px;
+    background-color: #333;
+    height: fit-content;
+}
+
+#stopwatch,
+span {
+    font-family: "sofachrome", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.cronoButton {
+    padding: 10px 8px;
+    font-size: 18px;
+    bottom: -20%;
+    font-family: "sofachrome", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #00000000;
+    border-radius: 8px;
+}
+
+.cronoButton:hover{
+    border: 1px solid #000;
 }
