@@ -155,7 +155,6 @@
         }
 
         // Función para eliminar un registro
-        // Función para eliminar un registro
         async function eliminarRegistro(id) {
             try {
                 const response = await fetch(
@@ -175,7 +174,7 @@
 
                 if (result.status === "success") {
                     Toastify({
-                        text: "Registro eliminado correctamente.",
+                        text: `Registro del corredor ${id} eliminado correctamente.`,
                         duration: 3000,
                         close: true,
                         gravity: "top",
@@ -260,7 +259,7 @@
 
                 if (result.status === "success") {
                     Toastify({
-                        text: "Tiempo guardado correctamente.",
+                        text: `Tiempo: ${tiempo} del corredor ${corredorId} guardado correctamente.`,
                         duration: 3000,
                         close: true,
                         gravity: "top",
