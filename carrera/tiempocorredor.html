@@ -73,7 +73,7 @@
         async function fetchCorredores() {
             try {
                 const response = await fetch(
-                    "https://ambuvirtual.com/corredoresTiempo.php"
+                    "https://fallieris.ddns.net/phpGIU/corredoresTiempo.php"
                 );
                 const result = await response.json();
 
@@ -158,7 +158,7 @@
         async function eliminarRegistro(id) {
             try {
                 const response = await fetch(
-                    "https://ambuvirtual.com/eliminarTiempo.php", // URL del archivo PHP
+                    "https://fallieris.ddns.net/phpGIU/eliminarTiempo.php", // URL del archivo PHP
                     {
                         method: "POST",
                         headers: {
@@ -242,7 +242,7 @@
         async function guardarTiempo(corredorId, tiempo) {
             try {
                 const response = await fetch(
-                    "https://ambuvirtual.com/guardarTiempo.php",
+                    "https://fallieris.ddns.net/phpGIU/guardarTiempo.php",
                     {
                         method: "POST",
                         headers: {
