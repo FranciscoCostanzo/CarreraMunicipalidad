@@ -1,5 +1,7 @@
+import { URLAPI } from "./utils";
+
 async function fetchCorredores() {
-    const php = "https://ambuvirtual.com/corredores.php";
+    const php = `${URLAPI}corredores.php`;
 
     try {
         const response = await fetch(php);
