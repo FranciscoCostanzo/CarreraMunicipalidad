@@ -1,7 +1,5 @@
-import { URLAPI } from "./utils";
-
 async function fetchCorredores() {
-    const php = `${URLAPI}corredores.php`;
+    const php = "https://fallieris.ddns.net/phpGIU/corredores.php";
 
     try {
         const response = await fetch(php);
@@ -16,7 +14,7 @@ async function fetchCorredores() {
             tableHeader.innerHTML = "";
             tableBody.innerHTML = "";
 
-            if (data.length > 0) {s
+            if (data.length > 0) {
                 // Crear encabezados de tabla
                 const headers = Object.keys(data[0]);
                 headers.forEach((header) => {

@@ -1,1 +1,0 @@
-export const URLAPI = 'https://fallieris.ddns.net/phpGIU/';

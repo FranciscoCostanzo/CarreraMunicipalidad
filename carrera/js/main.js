@@ -1,5 +1,3 @@
-import { URLAPI } from "./utils";
-
 document.getElementById('runnerForm').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevenir el envío del formulario por defecto
 
@@ -35,7 +33,7 @@ document.getElementById('runnerForm').addEventListener('submit', async function(
 
     try {
         // Realizar la solicitud POST al archivo PHP
-        const response = await fetch(`${URLAPI}process.php`, {
+        const response = await fetch("https://fallieris.ddns.net/phpGIU/process.php", {
             method: 'POST',
             mode: 'cors',
             body: formData
@@ -90,7 +88,7 @@ document.getElementById('runnerForm').addEventListener('submit', async function(
 // Función para cargar el ranking
 async function loadRanking() {
     try {
-        const response = await fetch(`${URLAPI}corredores.php`, {
+        const response = await fetch("https://fallieris.ddns.net/phpGIU/corredores.php", {
             method: 'POST',
             mode: 'cors',
             body: new URLSearchParams({
